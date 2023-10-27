@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const { ClassSchema } = require("./ClassSchema");
+const { AnswerSchema } = require("./AnswerSchema");
 
 const TaskSchema = new mongoose.Schema({
   teacher: {
@@ -20,9 +20,13 @@ const TaskSchema = new mongoose.Schema({
     type: Date,
     require: true,
   },
-  Class: {
+  class: {
     type: String,
     require: true,
+  },
+  answers: {
+    type: [AnswerSchema],
+    require: false,
   },
 });
 
