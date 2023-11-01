@@ -15,12 +15,16 @@ const InstitutionSchema = new mongoose.Schema({
       require: true,
     },
   ],
+  email: {
+    type: String,
+    require: true
+  },
+  password: {
+    type: String,
+    require: true,
+  },
   class: {
     type: [ClassSchema],
-    require: false,
-  },
-  task: {
-    type: [TaskSchema],
     require: false,
   },
 });

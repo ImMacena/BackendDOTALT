@@ -9,15 +9,13 @@ const ClassSchema = new mongoose.Schema(
       require: true,
     },
     teacher: {
-      tpye: [UserSchema],
-      require: true,
+      type: [UserSchema],
+      require: false,
     },
-    students: [
-      {
-        student: String,
-        email: String,
-      },
-    ],
+    students: {
+      type: [UserSchema],
+      require: false,
+    },
   },
   { timestamps: true }
 );

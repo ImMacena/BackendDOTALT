@@ -6,15 +6,19 @@ const ChatSchema = new mongoose.Schema({
     {
       user: {
         tpye: String,
-        require: false,
+        require: true,
       },
       content: {
         tpye: String,
+        require: true,
+      },
+      fixed: {
+        type: Boolean,
         require: false,
       },
       postDate: {
         tpye: Date,
-        require: false,
+        require: true,
         default: Date.now,
       },
     },

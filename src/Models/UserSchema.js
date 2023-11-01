@@ -14,13 +14,17 @@ const UserSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    img_url: {
+    imgUrl: {
       type: String,
       require: false,
     },
     userType: {
       type: String,
       require: true,
+    },
+    classes: {
+      type: String,
+      require: false,
     },
   },
   { timestamps: true }

@@ -9,7 +9,7 @@ const BackpackSchema = new mongoose.Schema({
       },
       src: {
         type: String,
-        size: Decimal128,
+        size: Double,
         require: false,
       },
     },
