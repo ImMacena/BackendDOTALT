@@ -3,31 +3,34 @@ const mongoose = require("mongoose");
 const { ClassSchema } = require("./ClassSchema");
 const { TaskSchema } = require("./TaskSchema");
 
-const InstitutionSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    require: true,
-  },
-  docs: [
-    {
+const InstitutionSchema = new mongoose.Schema(
+  {
+    name: {
       type: String,
-      doc: String,
       require: true,
     },
-  ],
-  email: {
-    type: String,
-    require: true
+    docs: [
+      {
+        type: String,
+        doc: String,
+        require: true,
+      },
+    ],
+    email: {
+      type: String,
+      require: true,
+    },
+    password: {
+      type: String,
+      require: true,
+    },
+    class: {
+      type: [ClassSchema],
+      require: false,
+    },
   },
-  password: {
-    type: String,
-    require: true,
-  },
-  class: {
-    type: [ClassSchema],
-    require: false,
-  },
-});
+  { timestamps: true }
+);
 
 const Institution = mongoose.model("Institution", InstitutionSchema);
 

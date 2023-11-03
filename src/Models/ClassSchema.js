@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const UserSchema = require("./UserSchema");
+const { contentSchema } = require("./ContentSchema");
 
 const ClassSchema = new mongoose.Schema(
   {
@@ -14,6 +15,10 @@ const ClassSchema = new mongoose.Schema(
     },
     students: {
       type: [UserSchema],
+      require: false,
+    },
+    content: {
+      type: [contentSchema],
       require: false,
     },
   },
