@@ -22,12 +22,13 @@ const UserSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    classes: {
-      type: String,
-      require: false,
-    },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
+
+module.exports = {
+  User,
+  UserSchema
+}

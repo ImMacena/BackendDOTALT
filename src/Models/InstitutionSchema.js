@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const { ClassSchema } = require("./ClassSchema");
-const { TaskSchema } = require("./TaskSchema");
 
 const InstitutionSchema = new mongoose.Schema(
   {
@@ -24,7 +23,7 @@ const InstitutionSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    class: {
+    classes: {
       type: [ClassSchema],
       require: false,
     },

@@ -7,7 +7,7 @@ module.exports = {
     return res.status(200).json(userList);
   },
 
-  async create(req, res) {
+  async create (req, res) {
     const { name, email, password, userType } = req.body;
 
     if (!name || !email || !password || !userType) {

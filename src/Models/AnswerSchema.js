@@ -14,8 +14,7 @@ const AnswerSchema = new mongoose.Schema(
       type: Number,
       require: true,
     },
-  },
-  { timeseries: true }
+  }
 );
 
 const Answer = mongoose.model("Answer", AnswerSchema);

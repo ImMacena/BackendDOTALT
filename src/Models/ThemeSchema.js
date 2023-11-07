@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const { ContentSchema } = require("./ContentSchema");
+
 const ThemeSchema = new mongoose.Schema(
   {
     name: {
@@ -7,11 +9,11 @@ const ThemeSchema = new mongoose.Schema(
       require: true,
     },
     teacher: {
-      type: [UserSchema],
+      type: String,
       require: false,
     },
     content: {
-      type: [contentSchema],
+      type: [ContentSchema],
       require: false,
     },
   },
@@ -20,4 +22,7 @@ const ThemeSchema = new mongoose.Schema(
 
 const Theme = mongoose.model("Theme", ThemeSchema);
 
-module.exports = { Theme, ThemeSchema };
+module.exports = {
+  Theme,
+  ThemeSchema,
+};
