@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const UserSchema = require("./UserSchema");
-const { contentSchema } = require("./ContentSchema");
+const { ThemeSchema } = require("./ThemeSchema");
 
 const ClassSchema = new mongoose.Schema(
   {
@@ -9,16 +9,12 @@ const ClassSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    teacher: {
-      type: [UserSchema],
-      require: false,
-    },
     students: {
       type: [UserSchema],
       require: false,
     },
-    content: {
-      type: [contentSchema],
+    themes: {
+      type: [ThemeSchema],
       require: false,
     },
   },

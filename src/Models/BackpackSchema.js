@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 
+const UserSchema = require("./UserSchema");
+
 const BackpackSchema = new mongoose.Schema(
   {
+    student: {
+      type: [UserSchema],
+      require: true,
+    },
     storage: [
       {
         title: {
