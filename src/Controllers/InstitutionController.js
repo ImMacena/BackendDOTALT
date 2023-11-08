@@ -7,7 +7,7 @@ module.exports = {
     if (!name || !cnpj || !email || !password) {
       return res
         .status(400)
-        .json({ error: "Faltam informações para criar Instituição." });
+        .json({ message: "Faltam informações para criar Instituição." });
     }
 
     const institutionCreated = await Institution.create({

@@ -1,29 +1,20 @@
 const mongoose = require("mongoose");
 
-const UserSchema = require("./UserSchema");
+const { FileSchema } = require("./FileSchema");
 
 const BackpackSchema = new mongoose.Schema(
   {
     student: {
-      type: [UserSchema],
+      type: String,
       require: true,
     },
-    storage: [
-      {
-        title: {
-          type: String,
-          require: false,
-        },
-        src: {
-          type: String,
-          size: Double,
-          require: false,
-        },
-      },
-    ],
-    capacity: {
-      type: Decimal128,
+    storage: {
+      type: [FileSchema],
       require: false,
+    },
+    capacity: {
+      type: Number,
+      require: true,
     },
   },
   { timestamps: true }
