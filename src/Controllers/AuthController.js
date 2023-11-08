@@ -1,4 +1,5 @@
 const { User } = require("../Models/UserSchema");
+const UserController = require("./UserController");
 
 module.exports = {
   async login(req, res) {
