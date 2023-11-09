@@ -9,6 +9,7 @@ const InstitutionController = require("./Controllers/InstitutionController");
 const BackpackController = require("./Controllers/BackpackController");
 const FileController = require("./Controllers/FileController");
 const ClassController = require("./Controllers/ClassController");
+const ThemeController = require("./Controllers/ThemeController");
 
 routes.get("/user", UserController.read);
 routes.post("/user", UserController.create);
@@ -19,6 +20,8 @@ routes.post("/institution", InstitutionController.create);
 
 routes.post("/class", ClassController.create);
 routes.delete("/class", ClassController.delete);
+
+routes.post("/theme", ThemeController.create);
 
 routes.post("/file", upload.single("file"), FileController.create);
 
