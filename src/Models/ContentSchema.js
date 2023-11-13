@@ -10,8 +10,8 @@ const ContentSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    teacher: {
-      type: String,
+    size: {
+      type: Number,
       require: true,
     },
   },

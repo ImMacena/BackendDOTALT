@@ -10,6 +10,8 @@ const BackpackController = require("./Controllers/BackpackController");
 const FileController = require("./Controllers/FileController");
 const ClassController = require("./Controllers/ClassController");
 const ThemeController = require("./Controllers/ThemeController");
+const ContentController = require("./Controllers/ContentController");
+const TaskController = require("./Controllers/TaskController");
 
 routes.get("/user", UserController.read);
 routes.post("/user", UserController.create);
@@ -22,6 +24,10 @@ routes.post("/class", ClassController.create);
 routes.delete("/class", ClassController.delete);
 
 routes.post("/theme", ThemeController.create);
+
+routes.post("/content", upload.single("file"), ContentController.create);
+
+routes.post("/task", TaskController.create);
 
 routes.post("/file", upload.single("file"), FileController.create);
 

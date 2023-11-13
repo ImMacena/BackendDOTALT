@@ -10,10 +10,10 @@ module.exports = {
           .status(400)
           .json({ message: "Faltam informações para criar a matéria." });
       }
+      
+      const themeToAdd = { name: name };
 
       const institution = await Institution.findOne({ _id: institutionID });
-
-      const themeToAdd = { name: name };
 
       const classToChange = institution.classes.filter((classe) => {
         return classe._id == classID;

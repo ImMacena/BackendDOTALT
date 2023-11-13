@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const { ContentSchema } = require("./ContentSchema");
+const { TaskSchema } = require("./TaskSchema");
 
 const ThemeSchema = new mongoose.Schema(
   {
@@ -16,6 +17,10 @@ const ThemeSchema = new mongoose.Schema(
       type: [ContentSchema],
       require: false,
     },
+    tasks: {
+      type: [TaskSchema],
+      require: false,
+    }
   },
   { timestamps: true }
 );

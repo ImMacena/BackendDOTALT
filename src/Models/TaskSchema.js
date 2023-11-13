@@ -4,24 +4,15 @@ const { AnswerSchema } = require("./AnswerSchema");
 
 const TaskSchema = new mongoose.Schema(
   {
-    teacher: {
-      type: String,
-      require: true,
-    },
     question: {
       type: String,
       require: true,
     },
     postDate: {
-      type: Date,
+      type: String,
       require: true,
-      default: Date.now,
     },
     expirationDate: {
-      type: Date,
-      require: true,
-    },
-    class: {
       type: String,
       require: true,
     },
